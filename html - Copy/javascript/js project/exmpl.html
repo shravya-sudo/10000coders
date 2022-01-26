@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>details table</title>
+	<style >
+	#container{
+		margin: 0;
+		padding: 10;
+
+	}
+	.container .display{
+		text-align: center;
+	}
+	.fm{
+		display: flex;
+	}
+	.input{
+		float: left;
+		padding: 10px;
+		heigth: 40%;
+	}
+	button{
+		background-color: blue;
+		color: white;
+	}
+	/*table*/
+	table{
+		border-collapse: collapse;
+		width: 50%;
+		margin: 50px auto;
+	}
+	th{
+		background-color:#006699 ;
+		color: white;
+	}
+	table,th,tr{
+		border:px solid black;
+	}
+
+</style>
+</head>
+
+<body>
+	<!--student details-->
+	<div id="container">
+		<div  id="fm"class="input">
+			Sr.No*<br><input type="number" name="srno" id="srno"/>
+		</div>
+		<div id="fm" class="input">
+			Name*<br><input type="text" name="name" id="name"/>
+		</div>
+		<div id="fm" class="input">
+			Email*<br><input type="text" name="email" id="email"/>
+		</div>
+		<div id="fm" class="input">
+			Contact*<br><input type="text" name="contact" id="contact"/>
+		</div><br><br>
+		<button id="entry">add row</button>
+	</div><br>
+
+	<table id="display">
+		<tr>
+			<th>Sr.No</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Contact</th>
+		</tr>
+		</table>
+	<script>
+
+		let row = 1;
+
+		let entry=document.getElementById("entry");
+		entry.addEventListener("click",displayDetails);
+
+		function displayDetails() {
+			let srno = document.getElementById("srno").value;
+			let name = document.getElementById("name").value;
+			let email = document.getElementById("email").value;
+			let contact = document.getElementById("contact").value;
+
+			if(srno==""){
+				document.getElementById('srno').innerHTML="please fill the all the boxes";
+				return false;
+			}
+
+			if(srno.legth <= 2) || (user.length>20){
+				document.getElementById('srno').innerHTML="please fill";
+				return false;
+				}
+				let display = document.getElementById("display");
+
+			let newRow = display.insertRow(row);
+
+			let cell1 = newRow.insertCell(0);
+			let cell2 = newRow.insertCell(1);
+			let cell3 = newRow.insertCell(2);
+			let cell4 = newRow.insertCell(3);
+
+			cell1.innerHTML = srno;
+			cell2.innerHTML = name;
+			cell3.innerHTML = email;
+			cell4.innerHTML = contact;
+		}
+	</script>
+
+</body>
+</html>

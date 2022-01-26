@@ -1,0 +1,125 @@
+<html>
+<head>
+ <title> selectors exampls </title>
+ <style>
+      *{
+        background-color:#cfc3c5;
+       }
+
+      p{
+      text-align:center;
+      color: green;
+      }
+
+ 	.intro{
+        background-color:blue;
+ 	color:white;
+		}
+
+        .box{
+          border:5px dotted yellow;
+		}
+
+  	#container{
+		background-color:white;
+		}
+	div p{
+		color:yellow;}
+	div > p{
+		color:red;
+		font-style;bold;
+		font-size:20px;
+			}
+	div + p{
+		color:green;
+		font-size:20px;
+		font-style:bold}
+	a:visited{
+		color:brown;
+		}
+	h3,h3{
+           text-align:center;
+            color:#702633;}
+       
+</style>
+</head>
+ <body>
+	  	<!--globle selector-->
+	<h1 class="intro"> Selectors example 1 </h1>
+
+        <h2> globel selector </h2>
+
+        <p id="container">  which selector all the elements inside the body</p>
+
+	 	<!--tag/element selector-->
+
+        <h2> tag/element selector</h2>
+
+        <p> which select only respective tags </p>
+
+        <h3 class="box"> class selectors </h3>
+
+        <p> which selective only respective elements as per their class value we use class selectors re use the CSS</p>
+       
+		<!--Id selector-->
+
+	 <h3> id selectors </h3>
+
+        <p> which selects only respective elements as per their id value we we use id selector to selective unique element</p>
+         
+		<!--decendent selector-->
+        <h2> decendent selector</h2>
+        
+	<p> 
+	The descendant selector matches all elements that are descendants of a specified element.</p>
+        <div> <p> paragraph1 </p>
+	 <p> paragraph 2</p>
+	 <p> paragraph 3</p></div>
+	 <p> paragraph 4 </p>
+	<img src="https://i1.wp.com/css-tricks.com/wp-content/uploads/2019/04/rabbit-in-a-hat.png?fit=1200%2C600&ssl=1&resize=350%2C200"alt="selectors"class="box">
+
+		<!--direct childe sector-->
+	
+	<h2> direct child sector </h2>
+	<p> The child selector selects all elements that are the children of a specified element.(>)</p>
+	 <p> abc</p>
+	<div><p> def</p>
+	<span><p> ghi</p></span>
+	<p> jkl</p></div>
+	<p> mno</p>
+
+		<!--sibling selector-->
+
+	<h2> sibling selectors </h2>
+
+		<!-- adjecent sibling selector-->
+
+	<h3> adjesent sibling selectors</h3>
+	<p> The adjacent sibling selector is used to select an element that is directly after another specific element.</p>
+	<div> <p> paragraph1 </p></div>
+	 <p> paragraph 2</p>
+	<div> <p> paragraph 3</p></div>
+	 <p> paragraph 4 </p>
+
+		<!--general sibling selector-->
+	<h3> general sibling selector</h3>
+	<p> The general sibling selector selects all elements that are next siblings of a specified element.</p> 
+     
+		<!--psudo selectors-->
+
+	  <h2>psudo selectors</h2>
+	<p> A pseudo-class is used to define a special state of an element.</p>
+	<a href="default.asp" target="_blank">This is a link</a>
+ 
+
+		<!-- group selectors-->
+
+         <h2> group selectors</h2>
+	<p>The grouping selector selects all the HTML elements with the same style definitions.</p>
+	
+		<!--combinator selector-->
+
+	<h2>combinator selector</h2>
+	<p>A CSS selector can contain more than one simple selector. Between the simple selectors, we can include a combinator.</p>
+	</body>
+</html>

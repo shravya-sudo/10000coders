@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title> functions-js</title>
+	</head>
+	<body>
+		<
+
+	<article id ="ancestor">
+		article elements
+		<div id =" parent">
+			div element
+			<p id =" child">
+				p element
+			</p>
+		</div>
+
+	</article>
+		
+		<script >
+		//functions
+			function wishes(){
+				document.write("hello world");
+			}
+
+			wishes();
+		
+		
+		//function params
+				function message(firstName,lastName){
+				alert( "hello" + firstName+ " " + lastName);
+			}
+
+			message("keerthi","shravya");
+			message(" janu","reddy");
+			message(20,40);
+
+		//function with default statement
+				function multiply(a,b=2){
+					return a * b;
+				}
+					document.write(multiply(2,3));
+		//variable function
+				function multiply(a,b=0){
+					
+				}
+		//bubbling 
+		    for( let elem of document.querySelectorAll('*')){
+		    	elem.addEventListerener("click",e => console.log())
+		    }
+			
+			
+			
+		</script>
+	</body>
+</html>

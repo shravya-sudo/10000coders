@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+   </head>
+  <body>
+    <title>home page</title>
+	<style>
+		ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 12px;
+  text-decoration: none;
+}
+li a:hover {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+.right{
+
+float: right;
+
+}
+.row{
+  display: flex;
+}
+
+p{
+  color: white;
+}
+header{
+position:-webkit-sticky;
+position: sticky;
+top: 0%;
+}
+/*footer*/
+footer{
+  position:-webkit-sticky;
+  position: sticky;
+  bottom:0%;
+}
+footer li,footer p{
+  font-size: 12px;
+}
+li a{
+  display: flex; ;
+
+}
+footer{
+  padding:0px;
+}
+
+li a{
+  flex: 6;
+}
+li{
+  padding: 14px;
+}
+
+/*table*/
+  #table-p{
+  padding: 40px;
+}
+#delete{
+  font-size: 20px;
+}
+#add{
+  float: right;
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: blue;
+  color: white;
+  font-size: 15px;
+  border: none;
+}
+#butt1{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 7px;
+}
+#butt2{
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 7px;
+}
+#popup{
+  display: none;
+  width: 46%;
+  height: 220px;
+  padding: 20px;
+  border: 1px solid black;
+   position: fixed;
+        left: 45%;
+        top: 5%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 1;background-color: white;
+}
+#popup div{
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+#popup div div{
+  display: inline;
+}
+
+#close{
+  float: right;
+  margin: 15px;
+  background-color: white;
+}
+#save{
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 5px;
+
+}
+#errorm1,#errorm2,#errorm3{
+  color: white;
+  font-size: 15px;
+  background-color: red;
+  margin: 0;
+  border-color: ;
+}
+#tbl-tr td{
+  background-color: #006699;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 500px;
+}
+#tab{
+  padding: 48px;
+}
+#sno{
+  width: 20px;
+}
+ </style>
+
+</head>
+<body>
+  <!--header-->
+  <header>
+	<div class="">
+	<ul>
+	<li><img src="images/10k-logo.png" alt="10klogo"></li>	
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about">About</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="clints">Clints</a></li>
+  <li><a href="blog">Blog</a></li>
+  <li><a href="contact">Contact</a></li>
+  <div class="right">
+    <li>
+      <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+    </li>
+   <!-- <li><button type="button" class="btn btn-danger">Danger</button></div></li> -->
+  	<li><a href="signin"><i class='fas fa-user-alt'></i>Sign Up</a></li>
+  	<li><a href="login">Login</a></li>
+  </div>
+	</ul>
+  </div>
+</header>
+<div class="container">
+<h2> Delete multiple records from database using PHP</h2>
+
+</section>
+ <section id="table-p">
+       
+        <input id="add" type="button" name="button" value="Add New+" onclick="openForm()">
+           
+           <div id="popup-div">
+            <form id="popup" name="myform" onsubmit="return validateform()" on>
+              <h3>CRUD Application Form</h3>
+              <div>
+            <div><label>S.No*</label><br><input id="srno" type="text" name="sno" placeholder=""></div>
+            <div><label>Name*</label><br><input id="nam" type="text" name="name" placeholder="Name">
+              <p id="errorm1"> </p></div>
+            <div><label>Email*</label><br><input id="eml" type="email" name="email" placeholder="Email">
+              <p id="errorm2"> </p></div>
+            <div><label>Contact*</label><br><input id="mpno" type="text" name="contact" placeholder="Contact">
+               <p id="errorm3"> </p>
+            </div>
+           </div>
+
+           <section>
+            <button id="save">Save</button>
+            <hr>
+            <button id="close" onclick="closeForm()">Close</button>
+           </section>
+
+           </form>
+           </div>
+        </section>
+
+ <div id="tab">
+  <table id="list" cellspacing="0" cellpadding="10" border="1">
+    <thead>
+      <tr id="tbl-tr">
+        <td>S.No</td>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Contact</td>
+        <td>Action</td>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+</div>
+
+   </section>
+
+ </div>
+<!--footer-->
+<footer>
+
+  <div class="footer">
+  <ul>
+      
+  <li>
+  <div class="img">
+  <a href="#"><img src="images/10k-logo.png" alt="10klogo"></a>
+    <p>Suspendisse hendrerit tellus laoreel luctus<br> pharetra aliquam portittor vitia orci nec ultricies.<br>Curabitur vehicula,libero eget faubcibuc,<br>purus erat eleifend enim pellentesque ex mi ut sem.</p>
+  </a>
+</div>
+  </li>
+
+  <li style="font-size: 10px;">
+    <a href="menu">MENU_</a>
+    <a href="travel">TRAVEL</a>
+    <a href="nature">NARURE</a>
+    <a href="explores">EXPLORES</a>
+    <a href="science">SCIENCE</a>
+   <!-- <a href="advice">ADVICE</a> -->
+  </li>
+
+  <li>
+
+  <a href="about">About</a>
+  <a href="services">Contacts</a>
+  <a href="clints">Terns&Condition</a>
+  <a href="blog">Privacy Policy</a>
+  </li>
+  <li>
+    <a href="follow us">FOLLOW US</a>
+    <a href="facebook">Facebook</a>
+    <a href="twitter">Twitter</a>
+    <a href="instagram">Instagram</a>
+    <a href="rss">RSS</a>
+  </li>
+  <li>
+    <a href="newsletter">NEWSLETTER</a>
+    <p>Arover wearing a fuzzy suit doesn't alram the real penguinina</p>
+    <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </li>
+</ul>
+</div>
+</footer>
+
+<!--js-->
+ <script>
+  function openForm() {
+        document.getElementById("popup").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popup").style.display = "none";
+      }
+    function validform() {
+      let sno=document.myform.sno.value;
+    let name = document.myform.name.value;
+    let email = document.myform.email.value;
+    let contact = document.myform.contact.value;
+
+    if(!sno || !name || !email ||  !contact){
+      alert("Please fill all the boxes");
+      return;
+    }
+
+ if (/^[a-zA-Z ]$/.test(myform.name.value)) {
+    }
+    else{
+        document.getElementById('errorm1').innerHTML = "Please enter yourname";
+        document.getElementById('nam').style.border = '1px solid red';
+        
+        return false;
+    }
+    if (/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(myform.email.value)) {
+      
+    }
+    else {
+  
+    alert("You have entered an invalid email address!")
+    document.getElementById('errorm2').innerHTML = 'Please enter a valid email';
+    document.getElementById('eml').style.border = '1px solid red';
+    return (false);
+    }
+
+    if (/^\d{10}$/.test(myform.contact.value)) {
+      return (true);
+    }
+     else {
+
+    alert("Invalid number; must be ten digits")
+    document.getElementById('errorm3').innerHTML = 'Please enter a valid number'
+    document.getElementById('mpno').style.border = '1px solid red';
+    return (false);
+    }
+}
+
+
+let selectedrow=null;
+        function validateform(e){
+            event.preventDefault();
+
+            let formdata=readdata();
+
+            if(selectedrow===null){
+                insert(formdata);
+            }
+            else{
+                update(formdata);
+
+            }
+            resetform();
+
+        }
+        
+        function readdata(){
+            let formdata={};
+            formdata.sno=document.getElementById("srno").value;
+            formdata.name=document.getElementById("nam").value;
+            formdata.email=document.getElementById("eml").value;
+            formdata.contact=document.getElementById("mpno").value;
+            return formdata;
+        }
+        function insert(data){
+            let table=document.getElementById("list").getElementsByTagName("tbody")[0];
+            let newrow=table.insertRow(table.length);
+            let cell1=newrow.insertCell(0);
+            cell1.innerHTML=data.sno;
+            let cell2=newrow.insertCell(1);
+            cell2.innerHTML=data.name;
+            let cell3=newrow.insertCell(2);
+            cell3.innerHTML=data.email;
+            let cell4=newrow.insertCell(3);
+            cell4.innerHTML=data.contact;
+            let cell5=newrow.insertCell(4);
+            cell5.innerHTML=`<button onclick="onEdit(this)">Edit</button> <button onclick="ondelete(this)" >Delete</button>`;
+        }
+        function onEdit(td){
+            selectedrow=td.parentElement.parentElement;
+            console.log(selectedrow);
+            console.log("editable");
+            console.log(selectedrow);
+            document.getElementById("srno").value=selectedrow.cells[0].innerHTML;
+            document.getElementById("nam").value=selectedrow.cells[1].innerHTML;
+            document.getElementById("eml").value=selectedrow.cells[2].innerHTML;
+            document.getElementById("mpno").value=selectedrow.cells[3].innerHTML;
+        }
+        function update(formdata){
+            selectedrow.cells[0].innerHTML=formdata.sno;
+            selectedrow.cells[1].innerHTML=formdata.name;
+            selectedrow.cells[2].innerHTML=formdata.email;
+            selectedrow.cells[3].innerHTML=formdata.contact;
+            selectedrow.cells[4].innerHTML=formdata.action;
+
+        }
+        function ondelete(td){
+            if(confirm("do want to delete")){
+                row=td.parentElement.parentElement;
+                document.getElementById("list").deleteRow(row.rowIndex);
+            }
+            resetform();
+        }
+
+        function resetform(){
+            document.getElementById("srno").value="";
+            document.getElementById("nam").value="";
+            document.getElementById("eml").value="";
+            document.getElementById("mpno").value="";
+          }
+</script>
+
+</body>
+</html>

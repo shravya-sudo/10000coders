@@ -1,0 +1,88 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+  border-color: ;
+}
+
+.column{
+  float: left;
+  padding: 20px;
+  height: 400px; /* Should be removed. Only for demonstration */
+}
+
+.column left{
+  width: 40%;
+} 
+.column right {
+  width: 20%;
+}
+
+.middle {
+  width: 40%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+button{
+  color: white;
+  background-color: green;
+
+}
+span{
+  color: #767b7f;
+}
+.column right > img{
+  width: 200%;
+  height: 20%;
+}
+</style>
+</head>
+<boby>
+
+<div class="row">
+  <div class="column left" >
+    <img src="images/mobile.jpeg" alt="mobile">
+    <p>Add to Campare</p>
+  </div>
+  <div class="column middle" >
+    <h2 style="color:#1679e4;"> Redmi 9A (Nature Green,32 GB)</h2>
+
+    <p><button>4.3<span style="font-size: 100%;color:white;">
+&#9733;
+</span></button><span> 15,576 Rating & 896 Reviews </span></p>
+      <ul>
+        <li> 2 GB RAM|32 GB ROM</li>
+        <li> 16.59 cm(6.53 inch)Full HD+Display</li>
+        <li> 13MP Rear Camera </li>
+        <li> 5000 mAh Battery</li>
+        <li> 1 Year Manufacturer Warranty </li>
+      </ul>
+  </div>
+  <div class="column right" >
+    <h2><span style="color:black;"> &#8377;</span>7,771</h2>
+    <img height="21" src="flipcart.png" alt="flipcart">
+    <p> free delivery</p>
+  </div>
+</div>
+
+  <script> 
+  let mobile_info = {
+    img url :('images/mobile.jpeg');
+    name : 'Redmi 9A(Nature Green.32 GB)'
+    rating : 4.3*
+    storage : '2 GB RAM|32 GB ROM'
+    display : '16MP Real Camera'
+    battery : '5000 mAh Battery'
+    warranty : '1 Year Manufacture Warranty'
+    price : '7,771'
+    delivery : 'free delivery'
+  }
+</script> 
+</body>
+</html>

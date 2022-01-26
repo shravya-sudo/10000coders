@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>form</title>
+</head>
+<body>
+	<h2> form </h2>
+	<form id="form" class="form">
+		<input type="text" name="firstname" placeholder="Firstname" id="fname">
+		 <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i><br>
+		<input type="text" name="surname" placeholder="surname" id="uname">
+		<i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i><br>
+		<input type="number" name="mobile" placeholder="Mobileno" id="Mno">
+		<i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i><br>
+		<input type="text" name="surname" placeholder="surname" id="uname">
+		<i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i><br>
+		 <button>Submit</button>
+	</form>
+	<script >
+		let form = document.getElementById('form');
+ 		let username = document.getElementById('username');
+ 		let email = document.getElementById('email');
+ 		let password = document.getElementById('password');
+ 		let password2 = document.getElementById('password2');
+
+ 		form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    checkInputs();
+});
+
+function checkInputs() {
+    // trim to remove the whitespaces
+    let usernameValue = username.value.trim();
+     let emailValue = email.value.trim();
+    let passwordValue = password.value.trim();
+     let password2Value = password2.value.trim();
+    
+    if(usernameValue === '') {
+        setErrorFor(username, 'Username cannot be blank');
+    } else {
+        setSuccessFor(username);
+    }
+		
+	</script>
+
+</body>
+</html>

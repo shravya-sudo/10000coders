@@ -1,0 +1,82 @@
+<html>
+<head>
+<title> decendent selection </title>
+ <style>
+	table,td, th{
+           border:1px solid black;}
+
+	/* decendent selector */
+		 * p{
+		background-color:yellow;}
+		
+	/* direct child selector */
+                div > p{
+		background-color:pink;}
+
+	/* adjecent sibling selector */
+
+		tr:first-child + tr{
+		text-decoration:underline;
+                background-color:yellow;}
+
+	/* adjecent sibling selector */
+
+		div ~ li {
+		color:red;}
+
+	/* psuedo class selector */
+		a:link{
+		color:red;}
+	/* psudo element selector */
+		
+	h1::first-letter{
+		color:blue;}
+
+		
+			
+	</style>
+</head>
+   <body>
+	<h1> psuedo selector</h1>
+	<h2> selectots </h2>
+	<p>The top 3 reasons that are stopping you from getting a well-paid tech job</p>
+	<div><p>The essential skills you require to get into the IT industry</p>
+	<h2> adjecente <span>sibling<span> selector</h2></div>
+	<p>The dead-easy way to create a basic website on your own even if have never written code </p>
+	<p>The nitty-gritties of becoming a full-stack developer</p>
+        <ol>
+	<div><li> india</li></div>
+	<li> hindusthan</li>
+	<li> bharath</li>
+	</ol>
+	<ul>
+	<li> hydrabad</li>
+<div>
+	<li> amaravathi</li></div>
+	<li> medak</li>
+	</ul>
+       <a href="#">link submit</a>
+	<table>
+	<tr> 
+		<th>company</th>
+		<div><th>country</th></div>
+		<th>name</th>
+        </tr>
+	<tr> 
+		<td>google</td>
+		<td>us</td>
+		<td> charle</td>
+        </tr>
+	<tr> 
+		<td>amezon</td>
+		<td>uk</td>
+		<td>john</td>
+        </tr>
+	</table>
+	<div class="box"> change color </div>
+	
+	<a href="#">link submit</a>
+	
+	
+   </body>
+</html>
